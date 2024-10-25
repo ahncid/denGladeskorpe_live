@@ -42,6 +42,35 @@ const BackOfficeOrdersPage = () => {
     }
   };
 
+  const markAsShipped = async (orderId) => {
+    try {
+      const response = await fetch(`${serverPath}/order`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          id: orderId,
+          shipped: true,
+        }),
+      });
+  
+      if (response.ok) {
+        setOrders((prevOrders) =>
+          prevOrders.map((order) =>
+            order._id === orderId ? { ...order, shipped: true } : order
+          )
+        );
+      } else {
+        console.error("Kunne ikke opdatere ordrestatus");
+      }
+    } catch (error) {
+      console.error("Netværksfejl:", error);
+    }
+  };
+  
+  
+
   return (
     <div className={styles.orderContainer}>
       <h2>Backoffice Orders</h2>
@@ -74,6 +103,10 @@ const BackOfficeOrdersPage = () => {
               <p className={styles.orderDetails}>
                 <strong>Total pris:</strong> {order.totalPrice},-
               </p>
+              <p className={styles.orderDetails}>
+            <strong>Afsendt:</strong> {order.shipped ? "Ja" : "Nej"}
+            </p>
+
               <h4>Varer:</h4>
               <ul>
                 {order.dishes.map((dishItem, itemIndex) => {
@@ -91,6 +124,7 @@ const BackOfficeOrdersPage = () => {
                   );
                 })}
               </ul>
+              <button onClick={() => markAsShipped(order._id)}>Send ordre</button>
               <button onClick={() => deleteOrder(order._id)} className={styles.deleteButton}>
                 Slet ordre
               </button>

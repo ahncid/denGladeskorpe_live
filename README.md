@@ -48,7 +48,7 @@ Password : admin
 
 ### Vurdering af egen indsats og gennemførelse af opgaven
 
-Jeg har gennemført opgaven med en fokuseret tilgang og har lagt vægt på både koderenhed og funktionalitet. Min indsats har været fokuseret på at sikre, at komponenterne er skalerbare og at løsningen opfylder kravene til især mobile enheder.
+Jeg har gennemført opgaven med en fokuseret tilgang og har lagt vægt på både koderenhed og funktionalitet. Min indsats har været fokuseret på at sikre, at komponenterne er skalerbare og at løsningen opfylder kravene til især mobile enheder. Applikationen indeholder alle obligatoriske og tilvalgs opgaver.
 Overordnet er jeg tilfreds med min egen indsats.
 
 ## Projektforløb
