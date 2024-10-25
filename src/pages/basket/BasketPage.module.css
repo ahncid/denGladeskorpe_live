@@ -1,0 +1,140 @@
+
+
+.basketItems {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; 
+ 
+}
+
+.basketItem {
+  display: flex;
+  flex-direction: column;
+  background-color: #D9D9D973;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.basketItemHeader {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.pizzaImage {
+  width: 50px; 
+  height: auto;
+}
+
+.pizzaDetails {
+  display: flex;
+  flex-direction: column;
+}
+
+.pizzaTitle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.basketPage p {
+padding: 50px;
+}
+
+.pizzaExtras,
+.pizzaSize,
+.pizzaPrice {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+.underlined {
+  text-decoration: underline;
+}
+.pizzaExtras span,
+.pizzaSize span,
+.pizzaPrice span {
+  font-weight: bold;
+}
+
+.deleteButton {
+  background-color: #4A4A4A;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.totalPrice {
+  margin-top: 30px;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+}
+.orderContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  margin-top: -50px;
+}
+.commentBox {
+  height: 100px;
+}
+.submitOrderButton {
+  height: 64px;
+  width: 236px;
+    background-color: #4A4A4A;
+    border-radius: 50px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 32px;
+    font-family: var(--font-just-another-hand);
+}
+@media (min-width: 768px) {
+  .basketItems {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  .customerNameInput {
+    max-width: 600px;
+  }
+.deleteButton {
+  align-self: center;
+  width: 80%;
+  height: 50px;
+  margin-top: 50px;
+}
+.orderContainer textarea {
+  max-width: 600px;
+}
+  .basketItem {
+    margin: 15px;
+  }
+}
+@media (min-width: 1024px) {
+  .basketItems {
+    max-width: 1200px;
+  }
+  .customerNameInput {
+    max-width: 600px;
+  }
+  .deleteButton {
+    align-self: center;
+    width: 400px;
+    height: 50px;
+    margin-top: 50px;
+  }
+.orderContainer textarea {
+  max-width: 600px;
+}
+ 
+}

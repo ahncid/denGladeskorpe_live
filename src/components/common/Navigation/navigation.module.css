@@ -1,0 +1,90 @@
+.navigation {
+  padding: 40px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed; 
+  top: 0; 
+  left: 0;
+  right: 0;
+  z-index: 10; 
+  background-color: transparent; 
+  height: 80px;
+  gap: 20px;
+  overflow: hidden;
+  transition: background-color 0.3s ease;
+}
+
+.logo {
+  height: 40px;
+  width: auto;
+}
+
+.rightIcons {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; 
+}
+
+.basketIcon {
+  position: relative; 
+  margin-right: 15px;
+}
+
+.basketImage {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.basketCount {
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  padding: 2px 6px; 
+  font-size: 12px;
+  position: absolute;
+  top: -5px;
+  right: -5px; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.burgerMenu {
+  color: #a08a8a;
+  font-size: 25px;
+  cursor: pointer;
+  z-index: 10;
+
+}
+
+.menuOpen {
+  background-color: #4A4A4A;
+}
+
+.dropdownMenu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #4A4A4A;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  z-index: 9;
+  font-family: var(--font-just-another-hand);
+}
+
+.menuItem {
+  font-size: 40px;
+  color: white;
+  text-decoration: none;
+}
+
+.menuItem:hover {
+  color: #ddd;
+}

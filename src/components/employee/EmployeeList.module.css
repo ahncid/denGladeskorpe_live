@@ -1,0 +1,69 @@
+.employeeContainer {
+    padding: 20px;
+    max-width: 1024px; 
+    margin: 0 auto; 
+  }
+  
+  .employeeGrid {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 20px;
+    justify-content: center; 
+  }
+  
+  .employeeCard {
+    text-align: center;
+    width: auto; 
+    line-height: 0.1;
+  }
+  .employeeCard h3 {
+   margin: 0;
+   padding: 0;
+   font-size: 1.5rem;
+   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); 
+  }
+  .employeeCard p {
+    margin: 0;
+    padding: 0;
+    font-size: 1rem;
+  }
+  .employeeImage {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+
+  }
+  
+  @media (min-width: 768px) {
+    .employeeContainer {
+      max-width: 600px; 
+    }
+
+  .employeeImage {
+    width: 250px;
+    height: 250px;
+  }
+  .employeeCard h3 {
+    font-size: 2rem;
+  }
+  .employeeCard p {
+    font-size: 1.5rem;
+  }
+  }
+  
+  
+  @media (min-width: 1024px) {
+    .employeeContainer {
+      max-width: 1200px; 
+    }
+    .employeeImage {
+      width: 300px;
+      height: 300px;
+    }
+    .employeeCard h3 {
+      font-size: 2.5rem;
+    }
+    .employeeCard p {
+      font-size: 2rem;
+    }
+  }

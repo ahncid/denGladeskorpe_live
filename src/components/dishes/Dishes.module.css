@@ -1,0 +1,94 @@
+.dishes {
+  padding: 20px;
+  display: flex;
+  flex-direction: column; 
+  align-items: center; 
+}
+
+.dishList {
+  display: flex;
+  flex-wrap: wrap; 
+  justify-content: center; 
+  gap: 10px; 
+}
+
+.dishItem {
+  position: relative;
+  text-align: center;
+  background-color: white;
+  transition: box-shadow 0.3s ease;
+  box-sizing: border-box;
+  width: 100px;
+  height: 100px;
+  padding: 0; 
+  margin: 0;
+}
+
+.dishImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block; 
+}
+
+.dishTitle {
+  position: absolute;
+  top: 50%; 
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 12px;
+  color: white; 
+  text-align: center;
+  white-space: nowrap; 
+  padding: 0;
+  margin: 0;
+
+  text-shadow: 
+    -1px -1px 0 #000,  
+    1px -1px 0 #000,  
+    -1px 1px 0 #000,  
+    1px 1px 0 #000;
+}
+
+.dishes h2 {
+  text-align: center;
+  font-family: var(--font-just-another-hand);
+}
+
+
+@media (min-width: 768px) {
+  .dishList {
+    justify-content: center; 
+    gap: 20px; 
+  }
+
+  .dishItem {
+    width: 150px; 
+    height: 150px;
+  }
+
+  .dishTitle {
+    font-size: 20px;
+  }
+}
+
+
+@media (min-width: 1024px) {
+.dishes {
+  max-width: 1024px;
+  margin: 0 auto;
+ 
+}
+.dishTitle {
+  font-size: 25px;
+}
+  .dishList {
+    justify-content: center;
+    gap: 30px;
+  }
+
+  .dishItem {
+    width: 200px; 
+    height: 200px;
+  }
+}

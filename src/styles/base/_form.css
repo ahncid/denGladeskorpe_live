@@ -1,0 +1,43 @@
+form {
+
+    width: 100%;
+    font-family: var(--font-family);
+  
+    button {
+      margin-right : 10px;
+    }
+
+}
+
+input { 
+  font-family: var(--primary-font);
+  width: 100%;
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #000;
+  margin: 0 auto;
+
+}
+
+textarea {
+  width: 100%;
+  padding : 10px;
+  margin: 10px 0;
+  background-color: #fff;
+  border: 1px solid #000;
+  font-family: var(--primary-font);
+}
+
+
+
+@media (min-width: 1024px) {
+  form input { 
+
+    width: 50%;
+  }
+  
+  textarea {
+    width: 50%;
+  
+  }
+}

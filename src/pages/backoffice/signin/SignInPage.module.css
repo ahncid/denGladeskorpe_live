@@ -1,0 +1,34 @@
+.SignInContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .SignInContainer form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .SignInContainer h2 {
+    margin-top: 80px;
+  }
+  
+  .SignInContainer input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 16px;
+    max-width: 200px;
+  
+  }
+  
+  .SignInContainer button {
+    width: 100%;
+    padding: 8px 16px;
+    margin-top: 16px;
+    margin-bottom: 16px;
+  }
+  

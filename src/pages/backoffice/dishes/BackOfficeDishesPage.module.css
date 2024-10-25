@@ -1,0 +1,124 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 0;
+  justify-content: center;
+  list-style: none;
+}
+
+.dishItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.dishItem h3 {
+  margin: 0 0 10px 0;
+}
+
+.dishItem p {
+  margin: 5px 0;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  width: 100%;
+  margin-top: 10px;
+}
+
+button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #ddd;
+}
+
+.dishImage {
+  max-width: 200px;
+  height: auto;
+  margin-top: 10px;
+}
+
+.form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+  align-items: center;
+}
+
+.form input {
+  display: block;
+  margin-bottom: 10px;
+  padding: 10px;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 800px;
+  }
+
+  .dishItem {
+    flex: 1 1 45%;
+    max-width: 45%;
+  }
+
+  .form {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    margin-bottom: 20px;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1200px;
+    min-height: 100vh;
+  }
+
+  .dishItem {
+    flex: 1 1 32%;
+    max-width: 40%;
+  }
+
+  h2 {
+    text-align: center;
+  }
+
+  .form {
+    max-width: 600px;
+    padding: 20px;
+    margin-bottom: 20px;
+    margin: 0 auto;
+  }
+
+  .dishImage {
+    max-width: 200px;
+  }
+}

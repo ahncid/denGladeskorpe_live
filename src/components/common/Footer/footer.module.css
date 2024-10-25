@@ -1,0 +1,29 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  justify-content: center; 
+  background-color: #4A4A4A; 
+  padding: 20px;
+}
+
+.logo {
+  width: 150px; 
+  height: 150px; 
+  object-fit: contain; 
+  margin-bottom: 20px;
+}
+
+.info {
+  display: flex;
+  flex-direction: row; 
+  justify-content: center; 
+  gap: 15px;
+}
+
+.info p {
+  margin: 0;
+  font-size: 14px; 
+  color: #fff; 
+  font-family: var(--font-just-another-hand);
+}

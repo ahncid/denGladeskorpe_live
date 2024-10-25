@@ -1,0 +1,6 @@
+:root {
+    --font-just-another-hand: "Just Another Hand", cursive;
+    --font-kurale: "Kurale", serif;
+
+    --primary-font: var(--font-kurale); 
+}

@@ -1,0 +1,65 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  background-color: #DFD4D1;
+  align-items: center; 
+ padding-top: 20px;
+ padding-bottom: 20px;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center; 
+}
+
+.formGroup label {
+  font-weight: bold;
+  color: #fff; 
+  font-size: 24px;
+  text-align: center; 
+  text-shadow: 
+  -1px -1px 0 #000,  
+  1px -1px 0 #000,  
+  -1px 1px 0 #000,  
+  1px 1px 0 #000; 
+}
+
+.formGroup input,
+.formGroup textarea {
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #000; 
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); 
+  background-color: #DFD4D1;; 
+  width: 100%; 
+}
+.formGroup textarea {
+  height: 185px;
+}
+
+.error {
+  color: red;
+  font-size: 12px;
+}
+
+.submitButton {
+  padding: 10px 20px;
+  background-color: #4A4A4A;
+  color: white;
+  border: none;
+  font-size: 32px;
+  border-radius: 50px;
+  cursor: pointer;
+width: 236px;
+font-family: var(--font-just-another-hand);
+}
+
+.formGroup input,
+.formGroup textarea {
+  width: 75%; 
+  margin: 0 auto; 
+  text-align: center; 
+}
