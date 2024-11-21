@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import styles from "./navigation.module.css";
 import { icons } from "../../../services/icons";
 import useBasket from "../../Basket/Basket"; 
+import { serverPath } from "../../../services/settings";
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

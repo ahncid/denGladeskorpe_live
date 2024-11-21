@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import useTinyFetch from "../../hooks/tinyFetch.hook";
 import styles from "./Dishes.module.css"; 
+import { serverPath } from "../../services/settings";
 
 const Dishes = ({ selectedCategory }) => {
   // Bruger useTinyFetch hook til at hente retter og gemme dem i 'dishes'

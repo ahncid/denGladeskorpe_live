@@ -1,6 +1,7 @@
 import  { useState, useEffect } from "react";
 import useTinyFetch from "../../hooks/tinyFetch.hook";
 import styles from "./EmployeeList.module.css";
+import { serverPath } from "../../services/settings";
 
 const EmployeeList = () => {
   const { data: employees, fetchData } = useTinyFetch();
