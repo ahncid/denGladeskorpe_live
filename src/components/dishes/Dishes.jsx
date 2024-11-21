@@ -38,6 +38,8 @@ const Dishes = ({ selectedCategory }) => {
       {filteredDishes.length > 0 ? (
         <div className={styles.dishList}>
           {filteredDishes.map((dish) => (
+            console.log("Dish image:", dish.image),
+            console.log("ServerPath:", serverPath),
             <div key={dish._id} className={styles.dishItem}>
               <Link to={`/details/${dish._id}`}>
                 <h3 className={styles.dishTitle}>{dish.title}</h3>
