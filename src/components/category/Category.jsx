@@ -27,11 +27,11 @@ const Categories = ({ CategorySelect }) => {
               className={styles.categoryButton}
               onClick={() => CategorySelect(category.name)} // Vælg kategori ved klik
             >
-              <img
-                src={category.image}
-                alt={category.name}
-                className={styles.categoryImage}
-              />
+             <img
+  src={`${import.meta.env.BASE_URL}${category.image}`}
+  alt={category.name}
+  className={styles.categoryImage}
+/>
               <span className={styles.categoryName}>{category.name}</span>
             </button>
           ))}

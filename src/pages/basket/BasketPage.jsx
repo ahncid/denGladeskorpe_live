@@ -85,7 +85,12 @@ const BasketPage = () => {
                 <div className={styles.pizzaDetails}>
                   <h2 className={styles.pizzaTitle}>
                     {item.quantity}x {/* Viser antal af varen */}
-                    <img src={item.image} alt={item.title} className={styles.pizzaImage} /> {/* Billede af varen */}
+                    <img
+  src={`${import.meta.env.BASE_URL}${item.image}`}
+  alt={item.title}
+  className={styles.pizzaImage}
+/>
+
                     {item.title} {/* Titel/navn på varen */}
                   </h2>
                 </div>

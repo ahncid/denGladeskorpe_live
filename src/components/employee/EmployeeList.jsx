@@ -16,7 +16,11 @@ const EmployeeList = () => {
         <div className={styles.employeeGrid}>
           {employees.map((employee) => (
             <div key={employee._id} className={styles.employeeCard}>
-              <img src={employee.image} alt={employee.name} className={styles.employeeImage} />
+              <img
+  src={`${import.meta.env.BASE_URL}${employee.image}`}
+  alt={employee.name}
+  className={styles.employeeImage}
+/>
               <h3>{employee.name}</h3>
               <p>{employee.position}</p>
             </div>

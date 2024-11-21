@@ -41,7 +41,12 @@ const DetailsPage = () => {
 
             <div className={styles.detailContainer}>
               
-              <img src={dish.image} alt={dish.title} className={styles.dishImage} />
+            <img
+  src={`${import.meta.env.BASE_URL}${dish.image}`}
+  alt={dish.title}
+  className={styles.dishImage}
+/>
+
 
               <div className={styles.dishInfo}>
                 <h2>{dish.title}</h2>
