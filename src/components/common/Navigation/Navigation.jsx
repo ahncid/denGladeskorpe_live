@@ -31,11 +31,7 @@ const Navigation = () => {
       <div className={styles.rightIcons}>
         <div className={styles.basketIcon}>
           <Link to="/basket">
-            <img
-              src="/basket_icon.png"
-              alt="Basket"
-              className={styles.basketImage}
-            />
+          <img src={`${import.meta.env.BASE_URL}basket_icon.png`} alt="Basket" className={styles.basketImage} />
             {totalItems > 0 && (
               <span className={styles.basketCount}>{totalItems}</span>
             )}
