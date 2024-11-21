@@ -1,5 +1,4 @@
-// Settings
-export const serverPath = `http://localhost:3042`;
+export const serverPath = import.meta.env.VITE_BACKEND_URL;
 
 const settings = {};
 
