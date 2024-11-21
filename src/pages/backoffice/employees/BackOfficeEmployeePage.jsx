@@ -3,43 +3,43 @@ import { serverPath } from "../../../services/settings";
 import styles from "./BackOfficeEmployeePage.module.css";
 import { Link } from 'react-router-dom';
 
-
 const BackOfficeEmployeePage = () => {
-  const [employees, setEmployees] = useState([]);
-  const [error, setError] = useState(null);
-  const [editingEmployee, setEditingEmployee] = useState(null); 
-  const [newEmployee, setNewEmployee] = useState({ name: "", position: "", image: null }); 
-  const [previewImage, setPreviewImage] = useState(null); 
-  const [editPreviewImage, setEditPreviewImage] = useState(null); 
-
+  const [employees, setEmployees] = useState([]); // Lagrer listen af medarbejdere
+  const [error, setError] = useState(null); // Håndterer fejlmeddelelser
+  const [editingEmployee, setEditingEmployee] = useState(null); // Lagrer den medarbejder, der er ved at blive redigeret
+  const [newEmployee, setNewEmployee] = useState({ name: "", position: "", image: null }); // Lagrer data for en ny medarbejder
+  const [previewImage, setPreviewImage] = useState(null); // Forhåndsvisning af billede for ny medarbejder
+  const [editPreviewImage, setEditPreviewImage] = useState(null); // Forhåndsvisning af billede for redigering af medarbejder
 
   useEffect(() => {
-    fetchEmployees(); 
+    fetchEmployees(); // Henter medarbejdere, når komponenten indlæses
   }, []);
 
+  // Henter medarbejdere fra serveren
   const fetchEmployees = async () => {
     try {
       const response = await fetch(`${serverPath}/employees`);
       const result = await response.json();
-      setEmployees(result.data);
+      setEmployees(result.data); // Opdaterer employees state med de hentede medarbejdere
     } catch (err) {
-      setError("Failed to fetch employees");
+      setError("Failed to fetch employees"); 
     }
   };
 
-
+  // Håndterer upload af billede for ny medarbejder
   const handleImageUpload = (e) => {
     const file = e.target.files[0];
     if (file) {
       setNewEmployee({ ...newEmployee, image: file });
       const reader = new FileReader();
       reader.onloadend = () => {
-        setPreviewImage(reader.result);
+        setPreviewImage(reader.result); // Viser forhåndsvisning af det uploadede billede
       };
       reader.readAsDataURL(file);
     }
   };
 
+  // Opretter en ny medarbejder
   const createEmployee = async () => {
     const formData = new FormData();
     formData.append('name', newEmployee.name);
@@ -52,36 +52,34 @@ const BackOfficeEmployeePage = () => {
         body: formData,
       });
       const addedEmployee = await response.json();
-  
-      setEmployees([...employees, addedEmployee.data]); 
-  
-      setNewEmployee({ name: "", position: "", image: null });
-      setPreviewImage(null); 
+      setEmployees([...employees, addedEmployee.data]); // Tilføjer den nye medarbejder til listen
+      setNewEmployee({ name: "", position: "", image: null }); // Nulstiller inputfelter efter oprettelse
+      setPreviewImage(null); // Nulstiller så billedet ikke bliver vist
     } catch (err) {
-      setError("Failed to create employee");
+      setError("Failed to create employee"); 
     }
   };
 
- 
+  // Håndterer upload af billede ved redigering af medarbejder
   const handleEditImageUpload = (e) => {
     const file = e.target.files[0];
     if (file) {
       setEditingEmployee({ ...editingEmployee, image: file });
       const reader = new FileReader();
       reader.onloadend = () => {
-        setEditPreviewImage(reader.result); 
+        setEditPreviewImage(reader.result); // Viser forhåndsvisning af det uploadede billede
       };
       reader.readAsDataURL(file);
     }
   };
 
-
+  // Sætter en medarbejder i redigeringstilstand
   const handleEditEmployee = (employee) => {
     setEditingEmployee(employee);
-    setEditPreviewImage(employee.image); 
+    setEditPreviewImage(employee.image); // Viser billede i redigeringstilstand
   };
 
-
+  // Gemmer de opdaterede detaljer for en medarbejder
   const saveUpdatedEmployee = async () => {
     const formData = new FormData();
     formData.append('id', editingEmployee._id);
@@ -95,24 +93,23 @@ const BackOfficeEmployeePage = () => {
         body: formData,
       });
       const updatedEmployee = await response.json();
-
-    
+      // Opdaterer medarbejderlisten med de nye oplysninger
       setEmployees(prevEmployees =>
         prevEmployees.map(emp => emp._id === editingEmployee._id ? updatedEmployee.data : emp)
       );
-      setEditingEmployee(null); 
+      setEditingEmployee(null); // Afslutter redigeringstilstand
     } catch (err) {
-      setError("Failed to update employee");
+      setError("Failed to update employee"); 
     }
   };
 
-
+  // Sletter en medarbejder fra serveren og listen
   const deleteEmployee = async (id) => {
     try {
       await fetch(`${serverPath}/employee/${id}`, { method: "DELETE" });
-      setEmployees(employees.filter(emp => emp._id !== id));
+      setEmployees(employees.filter(emp => emp._id !== id)); // Fjerner den slettede medarbejder fra listen
     } catch (err) {
-      setError("Failed to delete employee");
+      setError("Failed to delete employee"); 
     }
   };
 
@@ -134,7 +131,6 @@ const BackOfficeEmployeePage = () => {
           </li>
         </ul>
       </div>
-
 
       <div>
         <h2>Opret medarbejder</h2>

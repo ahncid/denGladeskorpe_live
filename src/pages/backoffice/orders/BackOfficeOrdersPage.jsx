@@ -4,46 +4,56 @@ import styles from './BackOfficeOrdersPage.module.css';
 import { Link } from 'react-router-dom';
 
 const BackOfficeOrdersPage = () => {
+  // State til at gemme ordreliste hentet fra serveren
   const [orders, setOrders] = useState([]);
+  // State til at gemme information om retter, hvor hver ret kan tilgås via dens _id
   const [dishesMap, setDishesMap] = useState({});
 
+  // useEffect kører kun én gang ved komponentens første indlæsning
   useEffect(() => {
+    // Asynkron funktion til at hente ordredata fra serveren
     const fetchOrders = async () => {
       const response = await fetch(`${serverPath}/orders`);
       if (response.ok) {
         const data = await response.json();
-        setOrders(data.data);
+        setOrders(data.data); // Opdaterer orders-state med de hentede ordrer
       }
     };
 
+    // Asynkron funktion til at hente retter fra serveren
     const fetchDishes = async () => {
       const response = await fetch(`${serverPath}/dishes`);
       if (response.ok) {
         const data = await response.json();
+        // Reducer retterne til et objekt, hvor _id bruges som nøgle for at lette opslag
         const dishMap = data.data.reduce((map, dish) => {
           map[dish._id] = dish;
           return map;
         }, {});
-        setDishesMap(dishMap);
+        setDishesMap(dishMap); // Opdaterer dishesMap-state
       }
     };
 
-    fetchOrders();
-    fetchDishes();
-  }, []);
+    fetchOrders(); // Henter ordreliste
+    fetchDishes(); // Henter retter
+  }, []); // Tom afhængighedsliste sikrer, at denne kun kører én gang (ved mount)
 
+  // Funktion til at slette en ordre
   const deleteOrder = async (orderId) => {
     const response = await fetch(`${serverPath}/order/${orderId}`, {
       method: 'DELETE',
     });
 
     if (response.ok) {
+      // Filtrerer ordrerne og fjerner den slettede ordre
       setOrders((prevOrders) => prevOrders.filter((order) => order._id !== orderId));
     }
   };
 
+  // Funktion til at markere en ordre som afsendt
   const markAsShipped = async (orderId) => {
     try {
+      // Sender en PUT-anmodning til serveren for at opdatere ordrestatus til 'afsendt'
       const response = await fetch(`${serverPath}/order`, {
         method: 'PUT',
         headers: {
@@ -56,6 +66,7 @@ const BackOfficeOrdersPage = () => {
       });
   
       if (response.ok) {
+        // Hvis opdatering lykkes, opdateres order state lokalt
         setOrders((prevOrders) =>
           prevOrders.map((order) =>
             order._id === orderId ? { ...order, shipped: true } : order
@@ -65,11 +76,9 @@ const BackOfficeOrdersPage = () => {
         console.error("Kunne ikke opdatere ordrestatus");
       }
     } catch (error) {
-      console.error("Netværksfejl:", error);
+      console.error("Netværksfejl:", error); 
     }
   };
-  
-  
 
   return (
     <div className={styles.orderContainer}>
@@ -104,8 +113,8 @@ const BackOfficeOrdersPage = () => {
                 <strong>Total pris:</strong> {order.totalPrice},-
               </p>
               <p className={styles.orderDetails}>
-            <strong>Afsendt:</strong> {order.shipped ? "Ja" : "Nej"}
-            </p>
+                <strong>Afsendt:</strong> {order.shipped ? "Ja" : "Nej"}
+              </p>
 
               <h4>Varer:</h4>
               <ul>
