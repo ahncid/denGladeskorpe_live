@@ -1,13 +1,14 @@
-import  { useEffect } from "react";
+import  { useState, useEffect } from "react";
 import useTinyFetch from "../../hooks/tinyFetch.hook";
 import styles from "./EmployeeList.module.css";
 
 const EmployeeList = () => {
   const { data: employees, fetchData } = useTinyFetch();
+  
 
   useEffect(() => {
     fetchData("/employees"); 
-  }, [fetchData]);
+  }, []);
 
   return (
     <div className={styles.employeeContainer}>
