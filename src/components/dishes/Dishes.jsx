@@ -40,7 +40,7 @@ const Dishes = ({ selectedCategory }) => {
             <div key={dish._id} className={styles.dishItem}>
               <Link to={`/details/${dish._id}`}>
                 <h3 className={styles.dishTitle}>{dish.title}</h3>
-                <img src={dish.image} alt={dish.title} className={styles.dishImage} />
+                <img src={`${serverPath}${dish.image}`} alt={dish.title} className={styles.dishImage} />
               </Link>
             </div>
           ))}
