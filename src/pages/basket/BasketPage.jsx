@@ -70,7 +70,7 @@ const BasketPage = () => {
 
   return (
     <div className={styles.basketPage}>
-      <DynamicHeader backgroundImage="headerImg.png" dynamicWord="skorpe" />
+      <DynamicHeader backgroundImage="/headerImg.png" dynamicWord="skorpe" />
       <SubHeaderHeadline title="Bestilling" />
       {basket.length === 0 ? (
         <p>Kurven er tom.</p> // Viser en besked hvis kurven er tom
