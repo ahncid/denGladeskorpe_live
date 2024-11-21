@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import { serverPath } from "../../services/settings";
 
 
 const DishInfo = ({ render }) => {
@@ -23,7 +24,7 @@ const DishInfo = ({ render }) => {
     const fetchDishDetails = async () => {
       setLoading(true); 
       try {
-        const response = await fetch(`http://localhost:3042/dish/${id}`);
+        const response = await fetch(`${serverPath}/dish/${id}`);
         if (!response.ok) throw new Error(`${response.status}`); // Håndterer fejl hvis serveren svarer med en statuskode som ikke er ok
         
         const result = await response.json();

@@ -7,10 +7,11 @@ import ContactForm from "../../components/contact/ContactForm";
 const ContactPage = () => {
   return (
     <div className={styles.employeeContainer}>
-     <DynamicHeader 
-        backgroundImage="/headerImg.png" 
-        dynamicWord="skorpe"  
-      />
+ <DynamicHeader 
+  backgroundImage={`${import.meta.env.BASE_URL}headerImg.png`} 
+  dynamicWord="skorpe"  
+/>
+
        <SubHeader
         title="Har du spørgsmål eller ønsker du at bestille din favoritpizza?" 
         paragraph={`Udfyld formularen herunder, så vender vi hurtigt tilbage til dig. Vi glæder os til at høre fra dig!`}

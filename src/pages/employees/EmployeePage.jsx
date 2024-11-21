@@ -7,9 +7,10 @@ const EmployeePage = () => {
   return (
     <div className={styles.employeeContainer}>
      <DynamicHeader 
-        backgroundImage="/headerImg.png" 
-        dynamicWord="skorpe"  
-      />
+  backgroundImage={`${import.meta.env.BASE_URL}headerImg.png`} 
+  dynamicWord="skorpe"  
+/>
+
        <SubHeader
         title="Personalet hos Den Glade Skorpe" 
         paragraph={`Hos Den Glade Skorpe har vi et dedikeret og venligt personale, der altid går den ekstra mil for at sikre, at kunderne får den bedste oplevelse. Teamet består af erfarne pizzabagere, der med passion tilbereder lækre pizzaer med friske råvarer.`}

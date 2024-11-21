@@ -4,7 +4,8 @@ const Footer = () => {
   return (
     <footer className={styles.footer}>
 
-      <img src="/logo.png" alt="Logo" className={styles.logo} />
+<img src={`${import.meta.env.BASE_URL}logo.png`} alt="Logo" className={styles.logo} />
+
 
    
       <div className={styles.info}>

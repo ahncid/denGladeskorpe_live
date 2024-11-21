@@ -18,10 +18,11 @@ const HomePage = () => {
   return (
     <div>
 
-      <DynamicHeader 
-        backgroundImage="/headerImg.png" 
-        dynamicWord="skorpe"  
-      />
+<DynamicHeader 
+  backgroundImage={`${import.meta.env.BASE_URL}headerImg.png`} 
+  dynamicWord="skorpe"  
+/>
+
 
     
       <SubHeader

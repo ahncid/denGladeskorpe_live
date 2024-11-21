@@ -23,7 +23,7 @@ const Navigation = () => {
       {/* Logo til venstre */}
       <div className={styles.leftIcon}>
         <Link to="/">
-          <img src="/logo.png" alt="Logo" className={styles.logo} />
+        <img src={`${import.meta.env.BASE_URL}logo.png`} alt="Logo" className={styles.logo} />
         </Link>
       </div>
 

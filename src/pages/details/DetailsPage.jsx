@@ -33,7 +33,12 @@ const DetailsPage = () => {
         ];
         return (
           <div>
-            <DynamicHeader backgroundImage="/headerImg.png" dynamicWord={dish.title} />
+        
+            <DynamicHeader 
+  backgroundImage={`${import.meta.env.BASE_URL}headerImg.png`} 
+  dynamicWord={dish.title}  
+/>
+
             <div className={styles.detailContainer}>
               
               <img src={dish.image} alt={dish.title} className={styles.dishImage} />
